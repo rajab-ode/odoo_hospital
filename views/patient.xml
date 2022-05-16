@@ -43,6 +43,27 @@
         </field>
     </record>
 
+    <!-- step 7 -->
+    <!-- model.name search view -->
+    <record id="patient_search" model="ir.ui.view">
+        <field name="name">hospital.patient.search</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <search string="Patients">
+                <field name="name"/>
+                <field name="note"/>
+                <separator />
+                <filter name="male" string="Male Patients" domain="[('gender', '=', 'male')]"/>
+                <filter name="other" string="Female Patients" domain="[('gender', '=', 'female')]"/>
+                <filter name="other" string="Other Patients" domain="[('gender', '=', 'other')]"/>
+                <group expand="1" string="Group By">
+                    <filter string="Gender" name="gender" context="{'group_by':'gender'}" />                    
+                    <filter string="Patient Name" name="patient_name" context="{'group_by':'name'}" />                    
+                </group>
+            </search>
+        </field>
+    </record>
+
     <!-- step 4 -->
     <!-- patient action window -->
     <record id="patient_action" model="ir.actions.act_window">
