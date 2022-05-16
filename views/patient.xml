@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
 
+    <!-- edit view list is to see  -->
+
     <!-- step 5 -->
     <!-- model.name form view -->
     <record id="patient_form" model="ir.ui.view">
@@ -23,6 +25,21 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <!-- step 6 -->
+    <!-- model.name tree view -->
+    <record id="patient_tree" model="ir.ui.view">
+        <field name="name">hospital.patient.tree</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="gender"/>
+                <field name="note"/>
+            </tree>
         </field>
     </record>
 
